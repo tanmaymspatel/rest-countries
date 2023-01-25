@@ -1,9 +1,8 @@
+import Master from "./core/components/Master";
 
 function App() {
   return (
-    <div className="h-100">
-      hello
-    </div>
+    <Master />
   );
 }
 
