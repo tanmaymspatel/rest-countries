@@ -1,27 +1,8 @@
 // // theme Color
-$primary: hsl(213, 96%, 18%); // Marine blue
-$secondary: hsl(243, 100%, 62%); // Purplish blue
-$info: hsl(228, 100%, 84%); // Pastel blue
-$success: hsl(206, 94%, 87%); // Light blue
-$danger: hsl(354, 84%, 57%); // Strawberry red
-$cool-grey: hsl(231, 11%, 63%); // Cool Grey
-$light-grey: hsl(229, 24%, 87%); // Light Grey
-$magnolia: hsl(217, 100%, 97%); // Magnolia
-$warning: hsl(231, 100%, 99%); // Alabaster
-$light: hsl(0, 0%, 100%); // white...
-
-$theme-colors: (
-    primary: $primary,
-    secondary: $secondary,
-    info: $info,
-    success: $success,
-    danger: $danger,
-    waning: $warning,
-    light: $light
-);
-
-$custom-colors :(cool-grey: $cool-grey,
-    light-grey: $light-grey,
-    magnolia: $magnolia);
-
-$theme-colors: map-merge($theme-colors, $custom-colors);
+$primary: hsl(209, 23%, 22%); // Dark Blue (Dark Mode Elements)
+$secondary: hsl(0, 0%, 98%); // Very Light Gray (Light Mode Background)
+$info: hsl(207, 26%, 17%); // Very Dark Blue (Dark Mode Background)
+$success: hsl(0, 0%, 52%); // Dark Gray (Light Mode Input)
+$warning: hsl(200, 15%, 8%); // Very Dark Blue (Light Mode Text)
+$light: hsl(0, 0%, 100%); // White (Dark Mode Text & Light Mode Elements)
+$dark: #000;
