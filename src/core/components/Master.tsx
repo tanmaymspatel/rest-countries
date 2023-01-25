@@ -7,7 +7,7 @@ function Master() {
             <header id="header">
                 <Header />
             </header>
-            <main className="main-content flex-grow-1">
+            <main className="main-content flex-grow-1 overflow-y-auto">
                 <Routing />
             </main>
         </div>

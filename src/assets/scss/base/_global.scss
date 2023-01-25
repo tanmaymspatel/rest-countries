@@ -56,13 +56,12 @@ button {
     overflow: auto;
 }
 
-.overflow-y {
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
 .transition {
     transition: $transition-timing all;
+}
+
+.w-25 {
+    width: 25%;
 }
 
 .d-none {

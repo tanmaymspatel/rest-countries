@@ -1,0 +1,51 @@
+.main-content {
+    background-color: $secondary;
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 22%;
+        box-shadow: 0 0 6px 2px rgba($dark, 0.1);
+        margin: 1.5rem 0;
+        border-radius: $card-border-radius;
+
+        .flag-image {
+            height: 200px;
+            width: 100%;
+            border-top-left-radius: $card-border-radius;
+            border-top-right-radius: $card-border-radius;
+        }
+
+        .card-body {
+            padding: 0.75rem 1.5rem;
+        }
+
+        .country-name {
+            font-weight: 800;
+            font-size: 1.25rem;
+            padding: 0 0 0.5rem;
+        }
+
+        .county-states {
+            padding: 0.5rem 0 1.75rem;
+        }
+
+        .country-key,
+        .country-value {
+            font-size: 0.875rem;
+        }
+
+        .country-key {
+            font-weight: 800;
+        }
+
+        .country-value {
+            margin: 0 0.25rem;
+            font-weight: 600;
+        }
+    }
+}
