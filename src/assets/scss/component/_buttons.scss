@@ -1,0 +1,10 @@
+.btn {
+    padding: 0.75rem 2.25rem;
+    border-color: transparent;
+    box-shadow: $box-shadow;
+    border-radius: $btn-border-radius;
+
+    &.btn-light {
+        background-color: $light;
+    }
+}
