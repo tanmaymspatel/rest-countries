@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useNavigate } from "react-router-dom";
 
 import restServices from '../services/restServices'
@@ -9,10 +9,13 @@ function CountryList() {
     const [countiresData, setCountiresData] = useState<any>([]);
     const navigate = useNavigate()
 
+    const getCountriesList = useCallback(() => {
+        getAllCountries().then(res => setCountiresData(res.data));
+    }, [getAllCountries])
+
     useEffect(() => {
-        getAllCountries().then(res => setCountiresData(res.data)
-        )
-    }, [getAllCountries]);
+        getCountriesList();
+    }, [getCountriesList]);
 
     const cards = countiresData?.map((country: any, index: number) => {
         return (
