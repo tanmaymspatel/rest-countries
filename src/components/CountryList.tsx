@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useNavigate } from "react-router-dom";
 
 import restServices from '../services/restServices'
@@ -9,10 +9,42 @@ function CountryList() {
     const [countiresData, setCountiresData] = useState<any>([]);
     const navigate = useNavigate()
 
+    const [searchText, setSearchText] = useState('');
+    const [filterText, setFilterText] = useState('');
+    const [filteredList, setFilteredList] = useState<any>();
+    const [mapList, setMapList] = useState<any>();
+
+    const getCountriesList = useCallback(() => {
+        getAllCountries().then(res => setCountiresData(res.data));
+    }, [getAllCountries])
+
     useEffect(() => {
-        getAllCountries().then(res => setCountiresData(res.data)
-        )
-    }, [getAllCountries]);
+        getCountriesList();
+    }, [getCountriesList]);
+
+    useEffect(() => {
+        if (searchText) setCountiresData(countiresData.filter((country: any) => country.name.toLowerCase().includes(searchText.toLowerCase())))
+    }, [searchText, countiresData])
+
+    // const setList = useCallback(() => {
+    //     filterText ? setMapList(filteredList) : setMapList(countiresData);
+    // }, [filterText, filteredList, countiresData]);
+
+    // useEffect(() => {
+    //     setList()
+    // }, [setList])
+
+    // useEffect(() => {
+    //     console.log({ mapList }, { filteredList });
+    // })
+
+    const searchByText = useCallback(() => {
+        if (searchText) setCountiresData(countiresData.filter((country: any) => country.name.toLowerCase().includes(searchText.toLowerCase())))
+    }, [searchText, countiresData]);
+
+    useEffect(() => {
+        searchByText();
+    }, [searchByText])
 
     const cards = countiresData?.map((country: any, index: number) => {
         return (
@@ -42,16 +74,41 @@ function CountryList() {
                 </div>
             </div>
         )
-    })
+    });
+
+
+
 
     return (
-        <section className="section">
-            <div className="container">
-                <div className='row row justify-content-between'>
-                    {cards}
+        <>
+            <section className='section'>
+                <div className='container'>
+                    <div className='row align-items-center justify-content-between input-box'>
+                        <div className='search-box form-control d-flex align-items-center'>
+                            <label htmlFor="search" className='form-label cursor-pointer icon-search'></label>
+                            <input type='text' className='flex-grow-1' autoComplete='off' id='search' placeholder='Search for a country...' onChange={(e) => setSearchText(e.target.value)} />
+                        </div>
+                        <div className='filter-box'>
+                            <select className='form-control select-box cursor-pointer' name="region" id="select" onChange={(e) => setFilterText(e.target.value)}>
+                                <option value="">Filter by Region</option>
+                                <option value="africa">Africa</option>
+                                <option value="america">America</option>
+                                <option value="asia">Asia</option>
+                                <option value="europe">Europe</option>
+                                <option value="oceania">Oceania</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section >
+                <div className="container">
+                    <div className='row row justify-content-between'>
+                        {cards}
+                    </div>
+                </div>
+            </section>
+        </>
     )
 };
 
