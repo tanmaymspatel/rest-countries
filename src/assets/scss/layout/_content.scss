@@ -6,12 +6,22 @@
     }
 
     .card {
-        display: flex;
-        flex-direction: column;
-        width: 22%;
+        width: 100%;
         box-shadow: 0 0 6px 2px rgba($dark, 0.1);
         margin: 1.5rem 0;
         border-radius: $card-border-radius;
+
+        @include breakpoint-up(sm) {
+            width: 47%;
+        }
+
+        @include breakpoint-up(md) {
+            width: 31%;
+        }
+
+        @include breakpoint-up(lg) {
+            width: 22%;
+        }
 
         .flag-image {
             height: 200px;
