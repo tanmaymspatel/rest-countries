@@ -14,10 +14,6 @@ function CountryList() {
         )
     }, [getAllCountries]);
 
-    useEffect(() => {
-        console.log(countiresData[0]);
-    }, [countiresData])
-
     const cards = countiresData?.map((country: any, index: number) => {
         return (
             <div className='card cursor-pointer'
