@@ -9,6 +9,36 @@
         margin-right: 0.5rem;
     }
 
+    .search-box,
+    .filter-box {
+        width: 100%;
+
+        @include breakpoint-up(md) {
+            width: 47%;
+        }
+    }
+
+    .search-box,
+    .select-box {
+        box-shadow: 0 0 6px 2px rgba($dark, 0.1);
+        border-radius: 4px;
+    }
+
+    .filter-box {
+        text-align: start;
+        padding-top: 2rem;
+
+        @include breakpoint-up(md) {
+            text-align: end;
+            padding-top: 0;
+        }
+
+        .select-box {
+            border: none;
+        }
+    }
+
+
     .card {
         display: flex;
         flex-direction: column;

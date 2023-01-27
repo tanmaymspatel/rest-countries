@@ -1,0 +1,29 @@
+#search {
+    border: none;
+    background-color: transparent;
+    padding: 0 1rem;
+    font-size: 0.875rem;
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: $success;
+    }
+}
+
+#select {
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.icon-search {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    padding: 0.75rem 1rem;
+    background-color: $light;
+}
