@@ -2,7 +2,9 @@ import { Route, Routes, Navigate } from "react-router-dom";
 
 import CountryDetails from "../../components/CountryDetails";
 import CountryList from "../../components/CountryList";
-
+/**
+ * @returns A routing component 
+ */
 function Routing() {
     return (
         <Routes>

@@ -14,10 +14,13 @@ const getAllCountries = () => axios.get(`${api}/all`);
  * @param countryName 
  */
 const getSingleCountryDetails = (countryName: string) => axios.get(`${api}/name/${countryName}`)
-
+/**
+ * @name restservices
+ * @description rest services used in the project
+ */
 const restservices = {
     getAllCountries,
     getSingleCountryDetails
-}
+};
 
 export default restservices;
