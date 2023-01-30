@@ -1,9 +1,12 @@
+import DarkModeProvider from "./context/theme-context/DarkModeProvider";
 import Master from "./core/components/Master";
 
 function App() {
   return (
-    <Master />
-  );
-}
+    <DarkModeProvider>
+      <Master />
+    </DarkModeProvider>
+  )
+};
 
 export default App;

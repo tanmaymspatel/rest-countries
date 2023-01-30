@@ -57,6 +57,10 @@
             width: 22%;
         }
 
+        .country-image-container {
+            height: 200px;
+        }
+
         .flag-image {
             height: 200px;
             width: 100%;
@@ -72,6 +76,9 @@
             font-weight: 800;
             font-size: 1.25rem;
             padding: 0 0 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .county-states {
@@ -84,7 +91,7 @@
         }
 
         .country-key {
-            font-weight: 800;
+            font-weight: 600;
         }
 
         .country-value {
@@ -142,13 +149,12 @@
     }
 
     .countryinfo-key {
-        font-weight: 800;
+        font-weight: 600;
     }
 
     .countryinfo-value {
         margin: 0 0.25rem;
-        font-weight: 600;
-        color: $success;
+        color: $primary;
 
         &.border-country {
             padding: 0.25rem 2.5rem;
@@ -182,4 +188,45 @@
             flex: 0 0 150px;
         }
     }
+
+    // dark mode style
+    &.dark-mode {
+        background-color: $info;
+
+        .card-body {
+            background-color: $primary;
+            color: $light;
+        }
+
+        .country-value {
+            color: $success;
+        }
+
+        .search-box,
+        .select-box {
+            background-color: $primary;
+            color: $light;
+        }
+
+        #search {
+            &::placeholder {
+                color: $light;
+            }
+        }
+
+        // country details
+        .btn-back {
+            background-color: $primary;
+            color: $light;
+        }
+
+        .details-box {
+            color: $light;
+        }
+
+        .countryinfo-value {
+            color: $secondary;
+        }
+    }
+
 }
