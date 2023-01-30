@@ -2,38 +2,49 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 import restservices from '../services/restServices'
-
+/**
+ * @returns A component showing the details of the clicked country
+ */
 function CountryDetails() {
 
+    // value from url
     const { name } = useParams();
     const { getSingleCountryDetails } = restservices;
     const navigate = useNavigate();
+    // state of the clicked coutry
     const [countryDetails, setCountryDetails] = useState<any>({});
-    const [tld, setTld] = useState();
+    // state to store top level domain array
+    const [topLevelDomain, setTopLeveldomain] = useState();
+    // state to store currency details
     const [cur, setCur] = useState();
+    // state to store language details
     const [lang, setLang] = useState<any>([]);
+    // state to store language details in string form
     const [langString, setLangString] = useState();
+    // state to store border country details
     const [borderCountries, setBorderCountries] = useState<string[]>([]);
-
+    /**
+     * API call to get country details by country name and set the other details
+     */
     useEffect(() => {
         if (name) {
             getSingleCountryDetails(name as string).then(res => {
                 setCountryDetails(res.data[0]);
-                setTld(res.data[0].topLevelDomain[0]);
+                setTopLeveldomain(res.data[0].topLevelDomain[0]);
                 setCur(res.data[0].currencies[0].code);
                 setLang(res.data[0].languages)
                 setBorderCountries(res.data[0].borders)
             })
         }
     }, [getSingleCountryDetails, name]);
-
-
-
+    /**
+     * @description converting the array into the string
+     */
     useEffect(() => {
         const newLan = (lang?.map((l: any) => l.name));
         setLangString(newLan.join(', '));
     }, [lang]);
-
+    // border country tabs
     const borders = borderCountries?.map((borderCoutry: string, index: number) => {
         return <span className="border-country countryinfo-value d-flex align-items-center justify-content-center" key={index}>{borderCoutry}</span>
     })
@@ -83,7 +94,7 @@ function CountryDetails() {
                                 <div className='country-info'>
                                     <p className='country-detail-line'>
                                         <span className='countryinfo-key'>Top level Domain:</span>
-                                        <span className='countryinfo-value'>{tld}</span>
+                                        <span className='countryinfo-value'>{topLevelDomain}</span>
                                     </p>
                                     <p className='country-detail-line'>
                                         <span className='countryinfo-key'>Currencies:</span>

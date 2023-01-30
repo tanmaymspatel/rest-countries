@@ -189,6 +189,10 @@
         }
     }
 
+    .no-records {
+        text-align: center;
+    }
+
     // dark mode style
     &.dark-mode {
         background-color: $info;
@@ -209,9 +213,15 @@
         }
 
         #search {
+            color: $light;
+
             &::placeholder {
                 color: $light;
             }
+        }
+
+        .no-records {
+            color: $light;
         }
 
         // country details
