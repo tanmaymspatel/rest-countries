@@ -41,8 +41,8 @@ function CountryDetails() {
         < >
             <section className='section'>
                 <div className='container'>
-                    <div className='btn-bacak'>
-                        <button className='btn btn-light d-flex align-items-center justify-content-center' onClick={() => navigate(-1)}>
+                    <div>
+                        <button className='btn-back btn btn-light d-flex align-items-center justify-content-center' onClick={() => navigate(-1)}>
                             <span className='icon-back'></span>
                             <span>Back</span>
                         </button>

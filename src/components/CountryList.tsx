@@ -52,7 +52,7 @@ function CountryList() {
                 key={index}
                 onClick={() => navigate(`${country?.name}`)}
             >
-                <figure>
+                <figure className='country-image-container'>
                     <img src={country?.flags?.png} alt="flag" className='flag-image' />
                 </figure>
                 <div className='card-body'>

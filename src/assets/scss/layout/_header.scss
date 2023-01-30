@@ -1,16 +1,22 @@
 #header {
+    position: relative;
     flex: 0 0 $header-size;
     height: $header-size;
     color: $primary;
     background-color: $light;
     box-shadow: 0 0 6px 2px rgba($dark, 0.1);
 
-    .dark-mode {
+    .dark-mode-text {
         font-weight: 800;
 
         .icon-dark-mode {
             font-weight: 800;
             margin: 0 0.5rem;
         }
+    }
+
+    &.dark-mode {
+        background-color: $primary;
+        color: $light;
     }
 }
