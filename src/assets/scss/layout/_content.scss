@@ -2,7 +2,12 @@
     background-color: $secondary;
 
     .section {
-        padding: 3rem 0;
+        padding: 2rem 0;
+
+        @include breakpoint-up(md) {
+
+            padding: 3rem 0;
+        }
     }
 
     .icon-back {
@@ -58,13 +63,24 @@
         }
 
         .flag-image {
-            height: 220px;
+            height: auto;
             width: 100%;
             border-top-left-radius: $card-border-radius;
             border-top-right-radius: $card-border-radius;
-            object-fit: cover;
 
             @include breakpoint-up(sm) {
+                height: 170px;
+            }
+
+            @include breakpoint-up(md) {
+                height: 140px;
+            }
+
+            @include breakpoint-up(lg) {
+                height: 150px;
+            }
+
+            @include breakpoint-up(xl) {
                 height: 170px;
             }
         }
@@ -138,7 +154,7 @@
     }
 
     .country-image {
-        height: 350px;
+        height: auto;
         width: 100%;
     }
 
