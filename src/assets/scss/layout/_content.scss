@@ -43,23 +43,26 @@
         }
     }
 
+    .country-list-row {
+        margin: 0 -0.5rem;
+    }
 
     .card {
         width: 100%;
         box-shadow: 0 0 6px 2px rgba($dark, 0.1);
-        margin: 1.5rem 0;
+        margin: 1rem;
         border-radius: $card-border-radius;
 
         @include breakpoint-up(sm) {
-            width: 47%;
+            width: 43.9%;
         }
 
         @include breakpoint-up(md) {
-            width: 31%;
+            width: 28.75%;
         }
 
         @include breakpoint-up(lg) {
-            width: 22%;
+            width: 21%;
         }
 
         .flag-image {

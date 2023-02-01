@@ -86,7 +86,7 @@ function CountryList() {
             </section>
             <section >
                 <div className="container">
-                    <div className='row row justify-content-between'>
+                    <div className='row country-list-row'>
                         {((searchText || region) && !list.length) ? <NoRecords /> : cards}
                     </div>
                 </div>
