@@ -57,15 +57,16 @@
             width: 22%;
         }
 
-        .country-image-container {
-            height: 200px;
-        }
-
         .flag-image {
-            height: 200px;
+            height: 220px;
             width: 100%;
             border-top-left-radius: $card-border-radius;
             border-top-right-radius: $card-border-radius;
+            object-fit: cover;
+
+            @include breakpoint-up(sm) {
+                height: 170px;
+            }
         }
 
         .card-body {
@@ -73,16 +74,20 @@
         }
 
         .country-name {
-            font-weight: 800;
+            font-weight: 900;
             font-size: 1.25rem;
-            padding: 0 0 0.5rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            margin: 1.75rem 0;
+
+            @include breakpoint-up(md) {
+                margin: 1rem 0;
+            }
         }
 
         .county-states {
-            padding: 0.5rem 0 1.75rem;
+            padding: 0 0 1.75rem;
         }
 
         .country-key,
@@ -105,17 +110,6 @@
 
         @include breakpoint-up(md) {
             width: 47%;
-        }
-    }
-
-
-    .country-name {
-        margin: 1.75rem 0;
-        font-weight: 900;
-        font-size: 2rem;
-
-        @include breakpoint-up(md) {
-            margin: 1rem 0;
         }
     }
 
