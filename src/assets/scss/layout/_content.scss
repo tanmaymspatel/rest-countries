@@ -62,14 +62,11 @@
         }
 
         @include breakpoint-up(lg) {
-            width: 21%;
+            width: 21.6%;
         }
 
-        .flag-image {
+        .flag-image-container {
             height: auto;
-            width: 100%;
-            border-top-left-radius: $card-border-radius;
-            border-top-right-radius: $card-border-radius;
 
             @include breakpoint-up(sm) {
                 height: 170px;
@@ -80,13 +77,38 @@
             }
 
             @include breakpoint-up(lg) {
-                height: 150px;
+                height: 130px;
             }
 
             @include breakpoint-up(xl) {
                 height: 170px;
             }
+
+            .flag-image {
+                height: auto;
+                width: 100%;
+                border-top-left-radius: $card-border-radius;
+                border-top-right-radius: $card-border-radius;
+
+                @include breakpoint-up(sm) {
+                    height: 170px;
+                }
+
+                @include breakpoint-up(md) {
+                    height: 140px;
+                }
+
+                @include breakpoint-up(lg) {
+                    height: 130px;
+                }
+
+                @include breakpoint-up(xl) {
+                    height: 170px;
+                }
+            }
         }
+
+
 
         .card-body {
             padding: 0.75rem 1.5rem;
@@ -98,10 +120,10 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin: 1.75rem 0;
+            margin: 1rem 0;
 
             @include breakpoint-up(md) {
-                margin: 1rem 0;
+                margin: 0.5rem 0 1rem;
             }
         }
 
@@ -129,6 +151,16 @@
 
         @include breakpoint-up(md) {
             width: 47%;
+        }
+
+        .country-name {
+            margin: 2.5rem 0 1.5rem;
+            font-size: 1.5rem;
+
+            @include breakpoint-up(md) {
+                margin: 1.5rem 0;
+                font-size: 2rem;
+            }
         }
     }
 
@@ -216,20 +248,28 @@
         }
 
         .country-value {
-            color: $success;
+            color: rgba($secondary, 0.5);
         }
 
         .search-box,
         .select-box {
             background-color: $primary;
+        }
+
+        .search-box {
             color: $light;
         }
+
+        .select-box {
+            color: rgba($secondary, 0.7);
+        }
+
 
         #search {
             color: $light;
 
             &::placeholder {
-                color: $light;
+                color: rgba($secondary, 0.7);
             }
         }
 
@@ -248,7 +288,7 @@
         }
 
         .countryinfo-value {
-            color: $secondary;
+            color: rgba($secondary, 0.7);
         }
     }
 

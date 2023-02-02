@@ -18,7 +18,9 @@ function CountryCard({ name, flag, population, region, capital }: ICountryCardPr
         <div className='card cursor-pointer'
             onClick={() => navigate(`${name}`)} // navigate to the clicked country detail page
         >
-            <img src={flag} alt="flag" className='flag-image' />
+            <figure className="flag-image-container">
+                <img src={flag} alt="flag" className='flag-image' />
+            </figure>
             <div className='card-body'>
                 <p className='country-name'>{name}</p>
                 <div className='county-states'>
